@@ -1,0 +1,27 @@
+{
+  "name": "playwright-bdd-js",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "cucumber-js --require features/support --require features/step_definitions --format progress --format ./features/support/allure-reporter.js --tags \"not @manual\"",
+    "test:headed": "cucumber-js --require features/support --require features/step_definitions --format progress --format ./features/support/allure-reporter.js --world-parameters \"{\\\"headful\\\":true}\" --tags \"not @manual\"",
+    "test:manual": "cucumber-js --require features/support --require features/step_definitions --format progress --format ./features/support/allure-reporter.js --tags \"@manual\" --world-parameters \"{\\\"headful\\\":true}\"",
+    "pw:test": "npx playwright test tests/ecommerace.spec.js",
+    "pw:test:allure": "npx playwright test",
+    "pw:allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "pw:allure:open": "npx allure open allure-report"
+  },
+  "bin": {},
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.35.0",
+    "allure-commandline": "^2.14.0",
+    "allure-cucumberjs": "^2.15.1",
+    "allure-playwright": "^2.0.0",
+    "playwright": "^1.35.0"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.4"
+  }
+}

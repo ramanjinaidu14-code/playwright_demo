@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+.env
+/.nyc_output
+.vscode/
+allure-results/
+allure-report/
+allure-report.zip
+test-artifacts/
+test-results/
